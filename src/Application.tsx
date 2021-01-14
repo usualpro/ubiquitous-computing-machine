@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import UserDataStore from './observables/UserData';
 import { UserDisplayPassword } from './UserDisplayPassword';
+import UserDisplayPaswordClass from './UserDisplayPaswordClass';
 
 const Application = (): JSX.Element => {
     const form = useRef(null);
@@ -16,6 +17,7 @@ const Application = (): JSX.Element => {
             <input type="password" placeholder='password' name='password' />
         </form>
         <UserDisplayPassword />
+        <UserDisplayPaswordClass />
     </>;
 };
 export default Application;
