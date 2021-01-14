@@ -8,7 +8,7 @@ export default class UserDisplayPaswordClass extends React.Component {
             () => <>
                 LOGIN: {UserData.formData.get('login')}
                 <br />
-        PASSWORD:  {UserData.formData.get('password')}
+                PASSWORD:  {UserData.formData.get('password')}
             </>
         }
     </Observer>
