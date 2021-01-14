@@ -6,7 +6,7 @@ import Buttons from './Buttons';
 
 const Application = (): JSX.Element => {
     return <>
-        <h2>{`Hello World at ${CurrentTime}!`}</h2>
+        <h2>{`Hello World; at ${CurrentTime}!`}</h2>
         <DisplayCount />
         <Buttons />
     </>;
