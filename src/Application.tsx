@@ -1,14 +1,21 @@
-import React from 'react';
-import CurrentTime from './methods/getTime';
-
-import { DisplayCount } from './CountDisplay';
-import Buttons from './Buttons';
+import React, { useRef } from 'react';
+import UserDataStore from './observables/UserData';
+import { UserDisplayPassword } from './UserDisplayPassword';
 
 const Application = (): JSX.Element => {
+    const form = useRef(null);
+    const onChange = (e: any) => {
+        const formData = new FormData((form.current as any));
+        UserDataStore.setFormData(formData);
+        console.log(UserDataStore.formData);
+    };
+
     return <>
-        <h2>{`Hello World; at ${CurrentTime}!`}</h2>
-        <DisplayCount />
-        <Buttons />
+        <form ref={form} onChange={onChange}>
+            <input type="text" placeholder='login' name='login' />
+            <input type="password" placeholder='password' name='password' />
+        </form>
+        <UserDisplayPassword />
     </>;
 };
 export default Application;
